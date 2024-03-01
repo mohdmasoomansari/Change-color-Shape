@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color & Shape</title>
+    <style>
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        .circle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+
+        #triangle{
+            z-index: -1;
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid red;
+            border-right: 100px solid transparent;
+        }
+
+        #shape{
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: violet;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="circle">
+            <div id="triangle">
+
+            </div>
+            <div id="shape">
+
+            </div>
+        </div>
+        <button id="btn1">CHANGE SHAPE</button>
+        <button id="btn2">CHANGE COLOR</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
