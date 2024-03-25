@@ -1,27 +1,20 @@
-let cir = document.querySelector('.circle');
-let cc = document.getElementById('btn2');
+const clrArr = ["red", "green", "gray", "purple", "brown", "pink", "violet", "black"]
 
-let arr = ['blue', 'black', 'red', 'yellow', 'purple'];
-let cs = document.getElementById('btn1');
+const shpArr = ["circle", "square", "triangle"]
 
-cc.addEventListener('click', () =>{
-    let color = Math.floor(Math.random() * 5);
-    cir.style.backgroundColor = arr[color];
-});
+let button = document.querySelector("#chng-color");
+let shape = document.querySelector(".shape");
+let chngBtn = document.querySelector("#chng-btn")
 
-cs.addEventListener('click', () =>{
-    let shape1 = document.getElementById('shape');
-    let shape2 = document.getElementById('triangle');
 
-    let s1 = shape1.style.zIndex;
-    let s2 = shape2.style.zIndex;
+button.addEventListener("click", function () {
+    const random = Math.floor(Math.random() * clrArr.length)
+    document.querySelector(".background").style.backgroundColor = clrArr[random];
+})
 
-    if(s1 == -1 && s2 != -1){
-        shape1.style.zIndex = '1';
-        shape2.style.zIndex = '-1';
-    }
-    else{
-        shape1.style.zIndex = '-1';
-        shape2.style.zIndex = '1';
-    }
+
+chngBtn.addEventListener("click", function () {
+    const random = Math.floor(Math.random() * shpArr.length);
+    shape.id = shpArr[random]
+    shape.style.background = clrArr[random]
 })
